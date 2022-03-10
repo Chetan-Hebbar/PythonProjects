@@ -1,47 +1,47 @@
 import random
-import 'SCISSORS'y'SCISSORS'
-import o'SCISSORS'
-#Initialize win'SCISSORS' and lo'SCISSORS''SCISSORS'e'SCISSORS'
-win'SCISSORS'=0
-tie'SCISSORS'=0
-lo'SCISSORS''SCISSORS'e'SCISSORS'=0
-print('ROCK, PAPER, 'SCISSORS'CI'SCISSORS''SCISSORS'OR'SCISSORS' \n0 Win'SCISSORS', 0 Lo'SCISSORS''SCISSORS'e'SCISSORS', 0 Tie'SCISSORS'')
+import sys
+import os
+#Initialize wins and losses
+wins=0
+ties=0
+losses=0
+print('ROCK, PAPER, SCISSORS \n0 Wins, 0 Losses, 0 Ties')
 while True:
-    print('Enter your move: (r)ock (p)aper ('SCISSORS')ci'SCISSORS''SCISSORS'or'SCISSORS' or (q)uit')
-    gue'SCISSORS''SCISSORS' = 'SCISSORS'tr(input())
+    print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')
+    guess = str(input())
 
-    if gue'SCISSORS''SCISSORS' not in('ROCK','PAPER',''SCISSORS'','q'):
-        print('Plea'SCISSORS'e enter one of the following: r,p,'SCISSORS',q!')
+    if guess not in('ROCK','PAPER','SCISSORS','q'):
+        print('Please enter one of the following: r,p,s,q!')
         continue
-    robot_gue'SCISSORS''SCISSORS'_int=random.randint(1,3)
-    if robot_gue'SCISSORS''SCISSORS'_int==1:
-        robot_gue'SCISSORS''SCISSORS'='ROCK'
-    if robot_gue'SCISSORS''SCISSORS'_int==2:
-        robot_gue'SCISSORS''SCISSORS'='PAPER'
-    if robot_gue'SCISSORS''SCISSORS'_int==3:
-        robot_gue'SCISSORS''SCISSORS'=''SCISSORS''
+    robot_guess_int=random.randint(1,3)
+    if robot_guess_int==1:
+        robot_guess='ROCK'
+    if robot_guess_int==2:
+        robot_guess='PAPER'
+    if robot_guess_int==3:
+        robot_guess='SCISSORS'
 
     #DEBUG
-    print('Robot Gue'SCISSORS''SCISSORS': ',robot_gue'SCISSORS''SCISSORS')
+    print('Robot Guess: ',robot_guess)
 
-    if gue'SCISSORS''SCISSORS' =='q':
-        print('Thank'SCISSORS' for playing!')
-        'SCISSORS'y'SCISSORS'.exit()
+    if guess =='q':
+        print('Thanks for playing!')
+        sys.exit()
 
-    if gue'SCISSORS''SCISSORS'==robot_gue'SCISSORS''SCISSORS':
-        tie'SCISSORS'=tie'SCISSORS'+1
-        print('It i'SCISSORS' a tie!')
-        print('SCISSORS'tr(win'SCISSORS')+' Win'SCISSORS', '+'SCISSORS'tr(lo'SCISSORS''SCISSORS'e'SCISSORS')+' Lo'SCISSORS''SCISSORS'e'SCISSORS', '+'SCISSORS'tr(tie'SCISSORS')+' Tie'SCISSORS'')
+    if guess==robot_guess:
+        ties=ties+1
+        print('It is a tie!')
+        print(str(wins)+' Wins, '+str(losses)+' Losses, '+str(ties)+' Ties')
         continue
 
-    if (gue'SCISSORS''SCISSORS'=='ROCK' and robot_gue'SCISSORS''SCISSORS'=='PAPER') or (gue'SCISSORS''SCISSORS'=='PAPER' and robot_gue'SCISSORS''SCISSORS'==''SCISSORS'') or (gue'SCISSORS''SCISSORS'==''SCISSORS'' and robot_gue'SCISSORS''SCISSORS'=='ROCK'):
-        lo'SCISSORS''SCISSORS'e'SCISSORS'=lo'SCISSORS''SCISSORS'e'SCISSORS'+1
-        print('You Lo'SCISSORS'e!')
-        print('SCISSORS'tr(win'SCISSORS') + ' Win'SCISSORS', ' + 'SCISSORS'tr(lo'SCISSORS''SCISSORS'e'SCISSORS') + ' Lo'SCISSORS''SCISSORS'e'SCISSORS', ' + 'SCISSORS'tr(tie'SCISSORS') + ' Tie'SCISSORS'')
+    if (guess=='ROCK' and robot_guess=='PAPER') or (guess=='PAPER' and robot_guess=='SCISSORS') or (guess=='SCISSORS' and robot_guess=='ROCK'):
+        losses=losses+1
+        print('You Lose!')
+        print(str(wins) + ' Wins, ' + str(losses) + ' Losses, ' + str(ties) + ' Ties')
 
-    el'SCISSORS'e:
-        win'SCISSORS'=win'SCISSORS'+1
+    else:
+        wins=wins+1
         print('You Win!')
-        print('SCISSORS'tr(win'SCISSORS') + ' Win'SCISSORS', ' + 'SCISSORS'tr(lo'SCISSORS''SCISSORS'e'SCISSORS') + ' Lo'SCISSORS''SCISSORS'e'SCISSORS', ' + 'SCISSORS'tr(tie'SCISSORS') + ' Tie'SCISSORS'')
+        print(str(wins) + ' Wins, ' + str(losses) + ' Losses, ' + str(ties) + ' Ties')
 
-print('Thank'SCISSORS' for playing!')
+print('Thanks for playing!')
