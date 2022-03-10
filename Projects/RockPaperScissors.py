@@ -34,8 +34,7 @@ while True:
         guess='SCISSORS'
 
     #DEBUG
-    print('Robot Guess: ',robot_guess)
-    print('Your Guess:  ',guess)
+    print(guess,'versus...\n',robot_guess)
 
 
     if guess==robot_guess:
