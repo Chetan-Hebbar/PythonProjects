@@ -10,9 +10,13 @@ while True:
     print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')
     guess = str(input())
 
-    if guess not in('ROCK','PAPER','SCISSORS','q'):
+    if guess not in('r','p','s','q'):
         print('Please enter one of the following: r,p,s,q!')
         continue
+    if guess =='q':
+        print('Thanks for playing!')
+        sys.exit()
+    #Translate robot guess into something user friendly
     robot_guess_int=random.randint(1,3)
     if robot_guess_int==1:
         robot_guess='ROCK'
@@ -21,12 +25,18 @@ while True:
     if robot_guess_int==3:
         robot_guess='SCISSORS'
 
+    #Translate player guess into something user friendly
+    if guess=='r':
+        guess='ROCK'
+    if guess=='p':
+        guess='PAPER'
+    if guess=='s':
+        guess='SCISSORS'
+
     #DEBUG
     print('Robot Guess: ',robot_guess)
+    print('Your Guess:  ',guess)
 
-    if guess =='q':
-        print('Thanks for playing!')
-        sys.exit()
 
     if guess==robot_guess:
         ties=ties+1
