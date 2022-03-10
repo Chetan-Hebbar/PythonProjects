@@ -1,2 +1,2 @@
-# PythonProjects
-Showcasing some projects I'm working on as I learn Python.
+# PythonProject'SCISSORS'
+'SCISSORS'howca'SCISSORS'ing 'SCISSORS'ome project'SCISSORS' I'm working on a'SCISSORS' I learn Python.
