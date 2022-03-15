@@ -1,7 +1,11 @@
 import random
 
 numberOfStreaks = 0
+print('Enter number of flips per iteration')
+numFlips=int(input())
 
+print ('Enter length of streak to test')
+numStreak=int(input())
 
 def StreakChecker(genlist, streaklength, i):
     refvalue = genlist[i]
@@ -32,5 +36,5 @@ def CheckForStreaks(genlist, StreakLength):
     return False
 
 
-GeneratedList = (CreateHeadsTailsList(100))
-print(CheckForStreaks(['T', 'H', 'H', 'H', 'H', 'H', 'T', 'H', 'T', 'T'], 99))
+GeneratedList = (CreateHeadsTailsList(numFlips))
+print(CheckForStreaks(GeneratedList, numStreak))
