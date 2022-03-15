@@ -1,11 +1,12 @@
 import random
-
-numberOfStreaks = 0
 print('Enter number of flips per iteration')
 numFlips=int(input())
 
 print ('Enter length of streak to test')
 numStreak=int(input())
+
+print('Enter number of iterations to sample')
+numIterations=int(input())
 
 def StreakChecker(genlist, streaklength, i):
     refvalue = genlist[i]
@@ -31,10 +32,14 @@ def CheckForStreaks(genlist, StreakLength):
         # Check List[i] through List[i+StreakLength-1]
         isStreak = StreakChecker(genlist, StreakLength, i)
         # print(str(i)+ ', '+ List[i+Length-1])
-        if isStreak == True:
+        if isStreak:
             return isStreak
     return False
 
-
-GeneratedList = (CreateHeadsTailsList(numFlips))
-print(CheckForStreaks(GeneratedList, numStreak))
+numberOfStreaks = 0
+for experimentNumber in range(numIterations):
+    GeneratedList = (CreateHeadsTailsList(numFlips))
+    streakSuccess=CheckForStreaks(GeneratedList, numStreak)
+    if streakSuccess:
+        numberOfStreaks+=1
+print('Chance of streak: %s%%' % (numberOfStreaks * 100 / numIterations))
