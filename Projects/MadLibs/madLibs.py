@@ -1,4 +1,4 @@
-import re,pathlib
+import re,pathlib,pyinputplus
 
 
 def GrabPlaceholders(templatestr):
@@ -7,10 +7,12 @@ def GrabPlaceholders(templatestr):
 
 
 def RecordUserEntries(placeholderlist):
-    #  TODO: Do some basic string checking for the users inputs
     responselist = []
     for entry in placeholderlist:
-        response = input('Please provide a ' + str(entry) + ':\n')
+        while True:
+            response=input('Please provide a ' + str(entry) + ':\n')
+            if response.isalpha():
+                break
         responselist += [response]
     return responselist
 
